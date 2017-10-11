@@ -1,3 +1,8 @@
 <resources>
-    <string name="app_name">HW4</string>
+    <string name="app_name">Photo Gallery</string>
+    <string name="search_keyword">Search Keyword</string>
+    <string name="search">Search</string>
+    <string name="main_image_view">Main Image View</string>
+    <string name="next_button">Next Button</string>
+    <string name="previous_button">Previous Button</string>
 </resources>
