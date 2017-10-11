@@ -12,11 +12,7 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
 import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URL;
+import org.apache.commons.io.*;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -40,4 +36,16 @@ public class MainActivity extends AppCompatActivity {
         btnNext     = (ImageButton)findViewById(R.id.btnNext);
 
     }
+
+    private boolean isConnected() {
+        ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
+        if (networkInfo == null || !networkInfo.isConnected() ||
+                (networkInfo.getType() != ConnectivityManager.TYPE_WIFI
+                        && networkInfo.getType() != ConnectivityManager.TYPE_MOBILE)) {
+            return false;
+        }
+        return true;
+    }
+
 }
